@@ -27,9 +27,8 @@ for (let linha = 0; linha <= 10; linha++) {
 // fatorial
 let valores = []
 valores[0] = 1n
-for (let posicao = 1; posicao <= 15; posicao++) {
+for (let posicao = 1; posicao <= 15; posicao++)
   valores[posicao] = BigInt(posicao) * valores[posicao - 1]
 
-  // console log
-  console.log(valores[posicao])
-}
+// console log
+console.log(valores[posicao])
