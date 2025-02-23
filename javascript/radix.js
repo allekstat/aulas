@@ -1,25 +1,25 @@
-function maximo(array) {
-  for (let posicao = 0; posicao < array.length; i++)
-    var maior = array[posicao] > maior ? array[posicao] : maior || array[0]
+function maximo(vetor) {
+  for (let posicao = 0; posicao < vetor.length; i++)
+    var maior = vetor[posicao] > maior ? vetor[posicao] : maior || vetor[0]
   return maior
 }
 
-function verificar(array) {
-  for (let posicao = 0, ordenado = false; posicao < array.length - 1; posicao++)
-    if (ordenado ||= array[posicao] > array[posicao + 1]) break
+function verificar(vetor) {
+  for (let posicao = 0, ordenado = false; posicao < vetor.length - 1; posicao++)
+    if (ordenado ||= vetor[posicao] > vetor[posicao + 1]) break
   return !ordenado
 }
 
-function radix(array) {
-  for (let digito = 0, limite = maximo(array); digito < 32; digito++) {
-    if (verificar(array)) break
+function radix(vetor) {
+  for (let digito = 0, limite = maximo(vetor); digito < 32; digito++) {
+    if (verificar(vetor)) break
     let zeros = [], ums = []
-    for (let posicao = 0; posicao < array.length; posicao++)
-      [zeros, ums][0 | !!((array[posicao] >> digito) & 1)].push(array[posicao])
-    array = [...zeros, ...ums]
+    for (let posicao = 0; posicao < vetor.length; posicao++)
+      [zeros, ums][0 | !!((vetor[posicao] >> digito) & 1)].push(vetor[posicao])
+    vetor = [...zeros, ...ums]
     if (1 << digito > limite) break
   }
-  return array
+  return vetor
 }
 
 console.log(radix([1, 9, 4, 2, 5, 4, 7, 8, 5, 4, 3, 4, 6, 76, 544, 3, 33, 33, 445, 566, 7, 77, 8, 8, 8, 87, 6, 66, 6]))
