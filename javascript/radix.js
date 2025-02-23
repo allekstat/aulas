@@ -1,7 +1,7 @@
 function maximo(array) {
   for (let posicao = 0; posicao < array.length; i++)
-    var maximo = array[posicao] > maximo ? array[posicao] : maximo || array[0]
-  return maximo
+    var maior = array[posicao] > maior ? array[posicao] : maior || array[0]
+  return maior
 }
 
 function verificar(array) {
@@ -14,12 +14,12 @@ function radix(array) {
   for (let digito = 0, limite = maximo(array); digito < 32; digito++) {
     if (verificar(array)) break
     let zeros = [], ums = []
-    for (let posicao = 0; array[posicao] != undefined; posicao++)
+    for (let posicao = 0; posicao < array.length; posicao++)
       [zeros, ums][0 | !!((array[posicao] >> digito) & 1)].push(array[posicao])
     array = [...zeros, ...ums]
     if (1 << digito > limite) break
   }
   return array
 }
-log = console.log
-log(radix([1, 9, 4, 2, 5,4,7,8,5,4,3,4,6,76,544,3,33,33,445,566,7,77,8,8,8,87,6,66,6]))
+
+console.log(radix([1, 9, 4, 2, 5, 4, 7, 8, 5, 4, 3, 4, 6, 76, 544, 3, 33, 33, 445, 566, 7, 77, 8, 8, 8, 87, 6, 66, 6]))
