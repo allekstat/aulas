@@ -1,42 +1,20 @@
-﻿class Pessoa
-{
-    public string Nome;
-    public int Idade;
-    public string Cpf;
-    public string Rg;
-    public string Cnh;
-    public double Peso;
-    public double Altura;
-    public string Etnia;
-    public string Estado_civil;
-    public string Profissao;
-    public string Nacionalidade;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-    public double MetrosPorSegundo;
-    public double LitrosDeArNoPulmao;
-    public double IdadeDoArNoPulmao;
-    public void Andar() { MetrosPorSegundo = 1.2; }
-    public void Correr() { MetrosPorSegundo = 6.5; }
-    public void Parar() { MetrosPorSegundo = 0; }
-    public void Inspirar() { LitrosDeArNoPulmao += 0.1; }
-    public void Espirar() { LitrosDeArNoPulmao *= 0.9; }
-    public void Respirar()
+namespace Aula25032025
+{
+    internal class Pessoa
     {
-        if (LitrosDeArNoPulmao < 1.4 && IdadeDoArNoPulmao < 1.8)
+        public string nome;
+        public string email;
+        public int idade;
+        public string cpf;
+        public void mostraNome()
         {
-            Inspirar();
-            IdadeDoArNoPulmao += 0.2;
-        }
-        else if (LitrosDeArNoPulmao > 0.15)
-        {
-            Espirar();
-            IdadeDoArNoPulmao += 0.2;
-        }
-        else
-        {
-            IdadeDoArNoPulmao += 0.2;
+            Console.WriteLine("Nome:" + nome);
         }
     }
-
-    public void Falar() { Espirar(); }
 }
