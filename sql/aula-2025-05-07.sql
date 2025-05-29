@@ -316,3 +316,45 @@ FROM clientes cl
 ORDER BY pe.numero DESC,
 	cd.nome ASC,
 	cl.nome ASC;
+
+# exercicio 5 - funcionarios e pedidos atendidos por eles
+
+SELECT fu.nome AS FUNCIONARIO,
+	pe.numero AS PEDIDO,
+	pe.data_pedido AS DATA,
+	pe.valor AS VALOR,
+	cl.nome AS CLIENTE
+FROM funcionarios fu
+	LEFT JOIN pedidos pe ON pe.funcionario = fu.codigo
+	LEFT JOIN clientes cl ON cl.codigo = pe.cliente;
+
+# exercicio 6 - funcionarios e seus dependentes
+
+SELECT fu.nome AS FUNCIONARIO,
+	de.nome AS DEPENDENTE
+FROM funcionarios fu
+	LEFT JOIN dependentes de ON de.funcionario = fu.codigo;
+
+# exercicio 7 - clientes e seus conjuges (se tiver conjuge)
+
+SELECT cl.nome AS CLIENTE,
+	co.nome AS CONJUGE
+FROM clientes cl
+	INNER JOIN conjuges co ON co.cliente = cl.codigo;
+
+# exercicio 8 - clientes e seus conjuges (todos)
+
+SELECT cl.nome AS CLIENTE,
+	co.nome AS CONJUGE
+FROM clientes cl
+	LEFT JOIN conjuges co ON co.cliente = cl.codigo;
+
+# exercicio 9 - clientes, conjuges, pedidos e valor dos pedidos
+
+SELECT cl.nome AS CLIENTE,
+	co.nome AS CONJUGE,
+	pe.numero AS PEDIDO,
+	pe.valor AS VALOR
+FROM clientes cl
+	LEFT JOIN conjuges co ON co.cliente = cl.codigo
+	LEFT JOIN pedidos pe ON pe.cliente = cl.codigo;
