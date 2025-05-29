@@ -273,3 +273,46 @@ SELECT * FROM pedidos;
 SELECT * FROM titulos_pedidos;
 
 SELECT * FROM titulos_artistas;
+
+# exercicio 1 - cds e gravadoras
+
+SELECT cd.nome AS CD,
+	gr.nome AS GRAVADORA
+FROM titulos cd
+	LEFT JOIN gravadoras gr ON gr.codigo = cd.gravadora
+ORDER BY gr.nome ASC,
+	cd.nome ASC;
+
+# exercicio 2 - cds e categorias
+
+SELECT cd.nome AS CD,
+	ca.nome AS CATEGORIA
+FROM titulos cd
+	LEFT JOIN categorias ca ON ca.codigo = cd.categoria
+ORDER BY ca.nome ASC,
+	cd.nome ASC;
+
+# exercicio 3 - cds, gravadoras e categorias
+
+SELECT cd.nome AS CD,
+	gr.nome AS GRAVADORA,
+	ca.nome AS CATEGORIA
+FROM titulos cd
+	LEFT JOIN gravadoras gr ON gr.codigo = cd.gravadora
+	LEFT JOIN categorias ca ON ca.codigo = cd.categoria
+ORDER BY ca.nome ASC,
+	gr.nome ASC,
+	cd.nome ASC;
+
+# exercicio 4 - clientes e cds dos pedidos desses clientes
+
+SELECT cl.nome AS CLIENTE,
+	cd.nome AS CD,
+	pe.numero AS PEDIDO
+FROM clientes cl
+	RIGHT JOIN pedidos pe ON pe.cliente = cl.codigo
+	LEFT JOIN titulos_pedidos tp ON tp.pedido = pe.numero
+	LEFT JOIN titulos cd ON cd.codigo = tp.titulo
+ORDER BY pe.numero DESC,
+	cd.nome ASC,
+	cl.nome ASC;
