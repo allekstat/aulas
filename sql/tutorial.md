@@ -1,5 +1,7 @@
 > tutorial de sql básico pra pessoas tipo o rômulo
+> 
 > feito já com pensamento investigativo educacional
+> 
 > atualizado em 14/06/2025 às 13:19
 
 # primeiros comandos
