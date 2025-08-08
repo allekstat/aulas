@@ -1,0 +1,2 @@
+prompt $g$s
+cls
