@@ -6,4 +6,4 @@ o geoposicionamento é um processo que resulta na obtenção de um conjunto prec
 
 exemplos de uso incluem: rastreamento geográfico de animais; sistema de posicionamento, os mecanismos de determinação de posições geográficas em geral; geolocalização na internet, geolocalização de um dispositivo conectado à internet; e rastreamento de celular.
 
-a whatsApp, por exemplo, fornece uma ferramenta gratuita de localização do usuário que pode ser usada para ver a localização de um ente querido. aplicativos de entrega de comida utilizam a geolocalização para acompanhar todo o processo de entrega. o geoposicionamento também é usado na coleta de dados meteorológicos e fitopatológicos para prever patógenos de culturas.
+o whatsapp, por exemplo, fornece uma ferramenta gratuita de localização do usuário que pode ser usada para ver a localização de um ente querido. aplicativos de entrega de comida utilizam a geolocalização para acompanhar todo o processo de entrega. o geoposicionamento também é usado na coleta de dados meteorológicos e fitopatológicos para prever patógenos de culturas.
