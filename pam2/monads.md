@@ -3,43 +3,42 @@
 um teste em que o resultado tem dois valores possíveis: tipo da esquerda (left), ou da direita (right). geralmente o da esquerda é para erros e o da direita é para sucessos.
 
 ```javascript
-class Left
+class esquerda
 {
-    constructor(value)
+    constructor(valor)
     {
-        this.value = value;
+        this.valor = valor;
     }
-    map(f)
+    mapear(funcao)
     {
         return this;
     }
-    chain(f)
+    encadear(funcao)
     {
         return this;
     }
-    getOrElse(defaultValue)
+    valor_senao(valor_padrao)
     {
-        return defaultValue;
+        return valor_padrao;
     }
 }
-
-class Right
+class direita
 {
-    constructor(value)
+    constructor(valor)
     {
-        this.value = value;
+        this.valor = valor;
     }
-    map(f)
+    mapear(funcao)
     {
-        return new Right(f(this.value));
+        return new direita(funcao(this.valor));
     }
-    chain(f)
+    encadear(funcao)
     {
-        return f(this.value);
+        return funcao(this.valor);
     }
-    getOrElse(defaultValue)
+    valor_senao(valor_padrao)
     {
-        return this.value;
+        return this.valor;
     }
 }
 ```
