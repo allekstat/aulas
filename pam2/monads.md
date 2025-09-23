@@ -45,7 +45,7 @@ class direita
 
 ### monad result
 
-esse monad parece a mesma coisa do either, apenas que como as coisas são escritas é que muda, e que fazem mais sentido
+esse monad parece a mesma coisa do either, apenas que como as coisas são escritas é que muda, e que fazem mais sentido.
 
 ```javascript
 class ok
@@ -102,6 +102,28 @@ class io
     encadear(funcao)
     {
         return new io(() => funcao(this.rodar()).rodar());
+    }
+}
+```
+
+### monad task
+
+pelo que eu entendi é a mesma coisa do io, mas o task lida com o risco de ocorrer erros, enquanto o io não faz isso.
+
+```javascript
+class tarefa
+{
+    constructor(tarefa)
+    {
+        this.tarefa = tarefa;
+    }
+    mapear(funcao)
+    {
+        return new tarefa((rejeitar, resolver) => this.tarefa(rejeitar, valor => resolver(funcao(valor))));
+    }
+    bifurcar(rejeitar, resolver)
+    {
+        return this.tarefa(rejeitar, resolver);
     }
 }
 ```
