@@ -43,6 +43,12 @@ class direita
 }
 ```
 
+### monad result
+
+esse monad parece a mesma coisa do either, apenas que como as coisas são escritas é que muda, e que fazem mais sentido
+
+
+
 ### monad io
 
 permite um encadeamento de execuções que retornam a entrada para o próximo método, uma recursão 'inline' de funções diferentes, uma pegando o output da chamada precedente e usando como input.
