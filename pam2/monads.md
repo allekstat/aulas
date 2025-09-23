@@ -47,7 +47,38 @@ class direita
 
 esse monad parece a mesma coisa do either, apenas que como as coisas são escritas é que muda, e que fazem mais sentido
 
-
+```javascript
+class ok
+{
+    constructor(valor)
+    {
+        this.valor = valor;
+    }
+    mapear(funcao)
+    {
+        return new ok(funcao(this.valor));
+    }
+    valor_senao()
+    {
+        return this.valor;
+    }
+}
+class erro
+{
+    constructor(erro)
+    {
+        this.erro = erro;
+    }
+    mapear()
+    {
+        return new erro(this.erro)
+    }
+    valor_senao(erro)
+    {
+        return erro;
+    }
+}
+```
 
 ### monad io
 
