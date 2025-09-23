@@ -42,3 +42,29 @@ class direita
     }
 }
 ```
+
+### monad io
+
+permite um encadeamento de execuções que retornam a entrada para o próximo método, uma recursão 'inline' de funções diferentes, uma pegando o output da chamada precedente e usando como input.
+
+```javascript
+class io
+{
+    constructor(efeito)
+    {
+        this.efeito = efeito;
+    }
+    rodar()
+    {
+        return this.efeito();
+    }
+    mapear(funcao)
+    {
+        return new io(() => funcao(this.rodar()));
+    }
+    encadear(funcao)
+    {
+        return new io(() => funcao(this.rodar()).rodar());
+    }
+}
+```
