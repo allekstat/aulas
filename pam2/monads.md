@@ -68,3 +68,8 @@ class io
     }
 }
 ```
+
+### monad async
+
+aparentemente é o próprio conceito de async do javascript, onde você tem os .then e os .catch, fazendo os encadeamentos de acordo com o retorno da execução de cada .then.
+
